@@ -7,9 +7,11 @@ function abs(x){
 
 function countThursdays(date) {
     let thurdaysCount = 0
-    let startDate = date;
+    let startDate = new Date(date);
     let currentDate = new Date();
-    if (startDate > currentDate) return -9999;
+    if (startDate > currentDate) {
+        throw new Error("开始时间晚于当前时间，无法进行计算。");
+    }
     while (startDate <= currentDate){
         if(startDate.getDay() === 4){
             thurdaysCount++;
@@ -33,7 +35,7 @@ function resetSeatList(){
     }
 }
 
-function nextWeekShift(){
+export function nextWeekShift(){
     let a = seatList[0][23];
     let b = seatList[1][23];
     let c = seatList[0][24];
@@ -49,7 +51,7 @@ function nextWeekShift(){
     weekCnt++;
 }
 
-function lastWeekShift(){
+export function lastWeekShift(){
     let a = seatList[0][0];
     let b = seatList[1][0];
     let c = seatList[0][1];
@@ -65,7 +67,7 @@ function lastWeekShift(){
     weekCnt--;
 }
 
-function shiftToNow(){
+export function shiftToNow(){
     resetSeatList();
     let weeks = countThursdays(startTime);
     weeks += weekShift;
@@ -79,13 +81,13 @@ function shiftToNow(){
     }
 }
 
-function getWeekString(){
+export function getWeekString(){
     if (weekCnt > 0) return weekCnt.toString() + "周后";
     if (weekCnt === 0) return "当前周";
     if (weekCnt < 0) return abs(weekCnt).toString() + "周前";
 }
 
-function listToImage(){
+export function listToImage(){
     let image = new Array(8);
     for (let i = 0; i < 8; i++)
         image[i] = new Array(9);
@@ -107,7 +109,7 @@ function listToImage(){
 }
 
 const startTime = new Date("2024-06-06");
-const weekShift = 0;
+const weekShift = -6;
 const numberToName = ["", "蔡宇轩", "陈锦轩", "陈怡杉", "代宇彤", "丁艺贝", "丁屹城",
                       "丁梓馨", "冯浚", "高千惠","郭俊雄","韩呈奕", "华婧朵", "晋熙儿",
                       "冷宣澄", "李欣蔓", "李育涵", "刘瑞琦", "刘雅雯","刘姿雨", "柳子慧",
@@ -131,6 +133,3 @@ shiftToNow();
 // let seatImage = listToImage();
 // for (let i = 0; i < 8; i++)
 //     console.log(seatImage[i]);
-
-
-export default listToImage;

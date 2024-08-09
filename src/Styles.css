@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'LXGWWenkaiGB';
+    src: url('./LXGWWenKaiGB-Regular.ttf');
+}
+.span-style {
+    font-family: LXGWWenkaiGB;
+    font-size: large;
+    height: min-content;
+}
+.backgroundImage-style {
+    background-image: url('./BackgroundImage.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
