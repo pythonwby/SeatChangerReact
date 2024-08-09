@@ -132,6 +132,7 @@ function App() {
 							</Grid>
 							<Grid xs={12}>
 								<span class='mobile-warning-span-style'>移动端建议横屏查看该网页</span>
+								{/* <span class='mobile-warning-span-style'>当前为内部测试版本,一切内容以正式发布为准</span> */}
 							</Grid>
 							<Grid xs={12} alignContent={'center'} justifyContent={'center'}>
 								<Stack spacing={1} direction='row' alignContent={'center'} justifyContent={'center'} divider={<Divider orientation="vertical" variant='middle' flexItem />}>
