@@ -11,6 +11,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Divider from '@mui/material/Divider';
+import Stack from '@mui/material/Stack';
 import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
@@ -132,6 +133,15 @@ function App() {
 							<Grid xs={12}>
 								<span class='mobile-warning-span-style'>移动端建议横屏查看该网页</span>
 							</Grid>
+							<Grid xs={12} alignContent={'center'} justifyContent={'center'}>
+								<Stack spacing={1} direction='row' alignContent={'center'} justifyContent={'center'} divider={<Divider orientation="vertical" variant='middle' flexItem />}>
+									<span class='info-span-style'>数据收集时间:2024.6.6</span>
+									<span class='info-span-style'>数据修正时间:2024.8.9</span>
+									<a href='https://github.com/pythonwby/SeatChangerReact' class='info-span-style'>GitHub</a>
+									<span class='info-span-style'>SeatChangerReact by pythonwby on 2024.8.10</span>
+								</Stack>
+							</Grid>
+							<Grid xs={12} sx={{height: '1vh'}}/>
 						</Grid>
 					</Box>
 				</Container>

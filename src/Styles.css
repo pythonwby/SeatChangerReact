@@ -12,6 +12,11 @@
     font-size: medium;
     height: min-content;
 }
+.info-span-style{
+    font-family: LXGWWenkaiGB;
+    font-size: small;
+    height: min-content;
+}
 .backgroundImage-style-light {
     background-image: url('https://s3.bmp.ovh/imgs/2024/08/09/32e23a3b6961a576.jpg');
     background-size: cover;
