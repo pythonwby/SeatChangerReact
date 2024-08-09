@@ -13,13 +13,13 @@
     height: min-content;
 }
 .backgroundImage-style-light {
-    background-image: url('./BackgroundImageLight.jpg');
+    background-image: url('https://s3.bmp.ovh/imgs/2024/08/09/32e23a3b6961a576.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: top;
 }
 .backgroundImage-style-dark {
-    background-image: url('./BackgroundImageDark.jpg');
+    background-image: url('https://s3.bmp.ovh/imgs/2024/08/09/80b1a4045aa658c0.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: top;
