@@ -1,32 +1,41 @@
-@font-face {
-    font-family: 'LXGWWenkaiGB';
-    src: url('./LXGWWenKaiGB-Regular.ttf');
+@import 'lxgw-wenkai-lite-webfont/style.css';
+body{
+    font-family: "LXGW WenKai Lite", sans-serif;
 }
+
+/* @font-face {
+    font-family: 'LXGW WenKai GB';
+    src: url('hinted-LxgwWenKaiGB-Regular.woff') format('woff2'),
+        url('hinted-LxgwWenKaiGB-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} */
 .span-style {
-    font-family: LXGWWenkaiGB;
+    font-family: LXGW WenKai Lite;
     font-size: large;
     height: min-content;
 }
 .mobile-warning-span-style{
-    font-family: LXGWWenkaiGB;
+    font-family: LXGW WenKai Lite;
     font-size: medium;
     height: min-content;
     /* color: red;
     font-weight: bold; */
 }
 .info-span-style{
-    font-family: LXGWWenkaiGB;
+    font-family: LXGW WenKai Lite;
     font-size: small;
     height: min-content;
 }
 .backgroundImage-style-light {
-    background-image: url('https://s3.bmp.ovh/imgs/2024/08/09/32e23a3b6961a576.jpg');
+    background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/cnus91gi.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: top;
 }
 .backgroundImage-style-dark {
-    background-image: url('https://s3.bmp.ovh/imgs/2024/08/09/80b1a4045aa658c0.jpg');
+    background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/tc5zcgpw.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: top;
