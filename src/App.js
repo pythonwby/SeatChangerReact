@@ -1,5 +1,5 @@
 import {useState} from 'react';
-// import screenfull from 'screenfull';
+// import screenfull from 'screenfull';          //因稳定性原因删除
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -29,7 +29,7 @@ const tablecellStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 15.3, whiteSpa
 const emptyTablecellStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 15, whiteSpace: 'nowrap', border: 0, width: 8};
 const buttonStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 16, fontWeight: 'bold', height: 33, border: 2}
 
-// if (screenfull.isEnabled){
+// if (screenfull.isEnabled){                   //因稳定性原因删除
 // 	screenfull.request();
 // }
 

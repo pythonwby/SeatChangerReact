@@ -8,7 +8,7 @@ body{
     src: url('hinted-LxgwWenKaiGB-Regular.woff') format('woff2'),
         url('hinted-LxgwWenKaiGB-Regular.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
+    font-style: normal;                                                           //原字体渲染方案
     font-display: swap;
 } */
 .span-style {
