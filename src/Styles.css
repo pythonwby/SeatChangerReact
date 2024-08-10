@@ -1,3 +1,8 @@
+/* SeatChangerReact 前端CSS样式表
+   Author: pythonwby
+   Time: 2024/8/10 16:47
+   Version: 1.0                */
+
 @import 'lxgw-wenkai-lite-webfont/style.css';
 body{
     font-family: "LXGW WenKai Lite", sans-serif;
@@ -8,7 +13,7 @@ body{
     src: url('hinted-LxgwWenKaiGB-Regular.woff') format('woff2'),
         url('hinted-LxgwWenKaiGB-Regular.woff') format('woff');
     font-weight: normal;
-    font-style: normal;                                                           //原字体渲染方案
+    font-style: normal;                                                           *//*原字体渲染方案，兼容性过低删除*//*
     font-display: swap;
 } */
 .span-style {
@@ -29,13 +34,13 @@ body{
     height: min-content;
 }
 .backgroundImage-style-light {
-    background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/cnus91gi.png');
+    background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/cnus91gi.png');                    /*洛谷图床确实比其他杂牌图床速度快很多*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: top;
 }
 .backgroundImage-style-dark {
-    background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/tc5zcgpw.png');
+    background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/tc5zcgpw.png');                    /*但是空间真挺小的*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: top;

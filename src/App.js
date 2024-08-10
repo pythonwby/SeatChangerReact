@@ -1,3 +1,8 @@
+// SeatChangerReact 前端+Button信号映射
+// Author: pythonwby
+// Time: 2024/8/10 16:47
+// Version: 1.0
+
 import {useState} from 'react';
 // import screenfull from 'screenfull';          //因稳定性原因删除
 import Container from '@mui/material/Container';
@@ -22,7 +27,7 @@ import { listToImage, getWeekString, nextWeekShift, lastWeekShift, shiftToNow } 
 import './Styles.css';
 
 const timeNow = new Date();
-const lightOrDark = 16;
+const lightOrDark = 18;    //Light和Dark模式时间分界线
 const darkTheme = createTheme({palette:{mode: 'dark'}});
 const lightTheme = createTheme({palette:{mode: 'light'}});
 const tablecellStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 15.3, whiteSpace: 'nowrap', border: '1px dashed gray', padding: '12px 15px', bgcolor: 'rgba(0,0,0,0)'};
@@ -134,7 +139,6 @@ function App() {
 							</Grid>
 							<Grid xs={12}>
 								<span className='mobile-warning-span-style'>移动端建议横屏查看该网页</span>
-								{/* <span className='mobile-warning-span-style'>当前为内部测试版本,一切内容以正式发布为准</span> */}
 							</Grid>
 							<Grid xs={12} alignContent={'center'} justifyContent={'center'}>
 								<Stack spacing={1} direction='row' alignContent={'center'} justifyContent={'center'} divider={<Divider orientation="vertical" variant='middle' flexItem />}>
