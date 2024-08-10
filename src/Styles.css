@@ -3,17 +3,17 @@
    Time: 2024/8/10 16:47
    Version: 1.0                */
 
-@import 'lxgw-wenkai-lite-webfont/style.css';
-body{
-    font-family: "LXGW WenKai Lite", sans-serif;
-}
+/* @import 'lxgw-wenkai-lite-webfont/style.css';     //测试后最终还是决定删除自定义字体，
+body{                                                //Github的服务器在国内的下载速度真的太慢了。。。
+    font-family: "LXGW WenKai Lite", sans-serif;     //(实测不挂Watt下载速度只有十几kb/s,二十多MB的字体根本下不完)
+} */
 
 /* @font-face {
     font-family: 'LXGW WenKai GB';
     src: url('hinted-LxgwWenKaiGB-Regular.woff') format('woff2'),
         url('hinted-LxgwWenKaiGB-Regular.woff') format('woff');
     font-weight: normal;
-    font-style: normal;                                                           *//*原字体渲染方案，兼容性过低删除*//*
+    font-style: normal;                                                           //原字体渲染方案，兼容性过低删除
     font-display: swap;
 } */
 .span-style {
