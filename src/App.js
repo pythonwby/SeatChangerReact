@@ -3,6 +3,12 @@
 // Time: 2024/8/10 16:47
 // Version: 1.0
 
+/*
+更新日志：
+v1.0: 初始版本
+v1.0.1: 此文件未更改
+*/
+
 import {useState} from 'react';
 // import screenfull from 'screenfull';          //因稳定性原因删除
 import Container from '@mui/material/Container';

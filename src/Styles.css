@@ -3,6 +3,12 @@
    Time: 2024/8/10 16:47
    Version: 1.0                */
 
+/*
+更新日志：
+v1.0: 初始版本
+v1.0.1: 此文件未更改
+*/
+
 /* @import 'lxgw-wenkai-lite-webfont/style.css';     //测试后最终还是决定删除自定义字体，
 body{                                                //Github的服务器在国内的下载速度真的太慢了。。。
     font-family: "LXGW WenKai Lite", sans-serif;     //(实测不挂Watt下载速度只有十几kb/s,二十多MB的字体根本下不完)
