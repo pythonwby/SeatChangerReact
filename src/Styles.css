@@ -1,27 +1,10 @@
 /* SeatChangerReact 前端CSS样式表
-   Author: pythonwby
-   Time: 2024/8/10 16:47
-   Version: 1.0                */
+   Author: pythonwby*/
 
-/*
-更新日志：
-v1.0: 初始版本
-v1.0.1: 此文件未更改
-*/
-
-/* @import 'lxgw-wenkai-lite-webfont/style.css';     //测试后最终还是决定删除自定义字体，
-body{                                                //Github的服务器在国内的下载速度真的太慢了。。。
-    font-family: "LXGW WenKai Lite", sans-serif;     //(实测不挂Watt下载速度只有十几kb/s,二十多MB的字体根本下不完)
-} */
-
-/* @font-face {
-    font-family: 'LXGW WenKai GB';
-    src: url('hinted-LxgwWenKaiGB-Regular.woff') format('woff2'),
-        url('hinted-LxgwWenKaiGB-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;                                                           //原字体渲染方案，兼容性过低删除
-    font-display: swap;
-} */
+@import 'lxgw-wenkai-lite-webfont/style.css';
+body{
+    font-family: "LXGW WenKai Lite", sans-serif;
+}
 .span-style {
     font-family: LXGW WenKai Lite;
     font-size: large;
@@ -31,8 +14,6 @@ body{                                                //Github的服务器在国�
     font-family: LXGW WenKai Lite;
     font-size: medium;
     height: min-content;
-    /* color: red;
-    font-weight: bold; */
 }
 .info-span-style{
     font-family: LXGW WenKai Lite;
@@ -40,13 +21,13 @@ body{                                                //Github的服务器在国�
     height: min-content;
 }
 .backgroundImage-style-light {
-    background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/cnus91gi.png');                    /*洛谷图床确实比其他杂牌图床速度快很多*/
+    background-image: url('./BackgroundImageLight.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: top;
 }
 .backgroundImage-style-dark {
-    background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/tc5zcgpw.png');                    /*但是空间真挺小的*/
+    background-image: url('./BackgroundImageDark.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: top;

@@ -1,3 +1,56 @@
+## Seat Changer React
+
+* #### [查看网页](https://seat-changer-react.pages.dev/)
+
+* ### 概述
+
+    这是一个基于 React ，使用 Create React App 构建，托管于 Cloudflare Pages 的换座位计算器，根据某班级换座位规律编写，用于预测以后的座位，具有强定制性。
+
+* ### 前身
+
+    * 基于 Python & PyQt6 的 SeatChanger
+    * 基于 C# & .NET & WPF 的 SeatChangerWPF
+
+* ### 使用的 环境/语言/第三方库/平台
+
+    * JavaScript
+    * [React](https://react.dev/)
+    * [MUI](https://mui.com/)
+    * [Cloudflare](https://www.cloudflare.com)
+    * [Create React App](https://github.com/facebook/create-react-app)
+    * [LXGW WenKai / 霞鹜文楷](https://github.com/lxgw/LxgwWenKai)
+    * [lxgw-wenkai-webfont](https://github.com/chawyehsu/lxgw-wenkai-webfont)
+    * [Node.JS](https://nodejs.org)
+    * [Visual Studio Code](https://code.visualstudio.com/)
+
+## 更新日志
+
+* ### Version 1.1.0 (Cloudflare Pages 发布)
+
+    * 为解决速度问题，更换站点托管平台至 Cloudflare Pages
+    * 修改部分提示
+    * 修改 package.json 中的 homepage 以适配 Cloudflare Pages
+    * 由于解决了加载速度问题，将以前优化加载速度的功能全部取消
+    * 撰写本 README 文件
+
+* ### Version 1.0.1 (Github Pages 发布)
+
+    * 添加 holidayStartShift 功能
+    * 由于放假，暂停座位自动更新
+
+* ### Version 1.0.0 (Github Pages 发布)
+
+    * 使用新的方法渲染字体，解决兼容性问题
+    * 为修复不稳定问题取消自动全屏
+    * 在发布版本中删除了字体文件，缓解加载速度慢的问题
+    * 将图片上传到洛谷图床，缓解加载速度慢的问题
+
+* ### Version 0.9.0 (无发布)
+    
+    * 原始版本，没有正式发布过
+
+---
+以下是 README.md 的原内容(由 Create React App 自动生成)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

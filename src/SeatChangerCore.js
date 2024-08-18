@@ -1,13 +1,5 @@
 // SeatChangerReact 后端
 // Author: pythonwby
-// Time: 2024/8/10 16:47
-// Version: 1.0.1
-
-/*
-更新日志：
-v1.0: 初始版本
-v1.0.1: 加入 holidayStartShift 功能
-*/
 
 function abs(x){
     if (x >= 0){
