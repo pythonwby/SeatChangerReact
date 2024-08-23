@@ -25,6 +25,11 @@
 
 ## 更新日志
 
+* ### Version 1.1.2
+
+    * 删除一些自动生成的文件，简化代码
+    * 修改标题
+
 * ### Version 1.1.1
 
     * bug不好修，把 holidayStartShift 删了重写了一个 bool 开关
