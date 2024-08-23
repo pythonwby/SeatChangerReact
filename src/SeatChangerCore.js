@@ -9,6 +9,7 @@ function abs(x){
 }
 
 function countThursdays(date) {
+    if (holidayMode) return 0;
     let thurdaysCount = 0
     let startDate = new Date(date);
     let currentDate = new Date();
@@ -72,7 +73,7 @@ export function lastWeekShift(){
 
 export function shiftToNow(){
     resetSeatList();
-    let weeks = holidayStartShift !== 0 ? holidayStartShift : countThursdays(startTime);
+    let weeks = countThursdays(startTime);;
     weeks += weekShift;
     if (weeks >= 0){
         for (let i = 0; i < weeks; i++){
@@ -112,8 +113,8 @@ export function listToImage(){
 }
 
 const startTime = new Date("2024-06-06");
-const weekShift = 0;            // 用于对座位进行整体偏移，但不会暂停自动座位更新
-const holidayStartShift = 4;    // 用来在放假的时候暂停自动座位更新，值为放假开始时进行的换座位次数，值为0则关闭暂停功能
+const weekShift = -8;            // 用于对座位进行整体偏移
+const holidayMode = false;       // 假期模式，暂停座位更新，调整 weekShift 为当前周数即可使用，建议先将原周数注释
 const numberToName = ["", "蔡宇轩", "陈锦轩", "陈怡杉", "代宇彤", "丁艺贝", 
                       "丁屹城","丁梓馨", "冯浚", "高千惠","郭俊雄","韩呈奕", 
                       "华婧朵", "晋熙儿","冷宣澄", "李欣蔓", "李育涵", "刘瑞琦",

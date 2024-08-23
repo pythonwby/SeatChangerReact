@@ -25,6 +25,11 @@
 
 ## 更新日志
 
+* ### Version 1.1.1
+
+    * bug不好修，把 holidayStartShift 删了重写了一个 bool 开关
+    * 继续座位自动更新
+
 * ### Version 1.1.0 (Cloudflare Pages 发布)
 
     * 为解决速度问题，更换站点托管平台至 Cloudflare Pages
@@ -33,7 +38,7 @@
     * 由于解决了加载速度问题，将以前优化加载速度的功能全部取消
     * 撰写本 README 文件
 
-* ### Version 1.0.1 (Github Pages 发布)
+* ### Version 1.0.1 
 
     * 添加 holidayStartShift 功能
     * 由于放假，暂停座位自动更新
