@@ -20,6 +20,13 @@ body{
     font-size: small;
     height: min-content;
 }
+.data-out-of-date-warning-style{
+    font-family: LXGW WenKai Lite;
+    font-size: xx-large;
+    color: red;
+    font-weight: bold;
+    background-color: yellow;
+}
 .backgroundImage-style-light {
     background-image: url('./BackgroundImageLight.webp');
     background-size: cover;
