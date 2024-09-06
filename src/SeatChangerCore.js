@@ -8,7 +8,7 @@ function abs(x){
     return -x;
 }
 
-function countThursdays(date) {
+function countFridays(date) {
     if (holidayMode) return 0;
     let thurdaysCount = 0
     let startDate = new Date(date);
@@ -17,7 +17,7 @@ function countThursdays(date) {
         throw new Error("开始时间晚于当前时间，无法进行计算。");
     }
     while (startDate <= currentDate){
-        if(startDate.getDay() === 4){
+        if(startDate.getDay() === 5){
             thurdaysCount++;
         }
         startDate.setDate(startDate.getDate() + 1)
@@ -81,7 +81,7 @@ export function lastWeekShift(){
 
 export function shiftToNow(){
     resetSeatList();
-    let weeks = countThursdays(startTime);;
+    let weeks = countFridays(startTime);;
     weeks += weekShift;
     if (weeks >= 0){
         for (let i = 0; i < weeks; i++){
@@ -133,8 +133,8 @@ const numberToName = ["", "蔡宇轩", "陈锦轩", "陈怡杉", "代宇彤", "�
                       "赵艺涵","周子君", "熊通", "左恩森", "杨诗涵"];
 const originSeatList = creat2DArray();
 
-originSeatList[0] = [52,16,4 ,6 ,30,43,42,39,27,20,5 ,40,33,19,11,23,46,35,47,9 ,13,24,32,22,31,15]; //靠左列
-originSeatList[1] = [1 ,29,34,25,28,3 ,8 ,51,45,44,7 ,38,37,2 ,10,21,48,50,14,41,49,26,36,17,12,18]; //靠右列
+originSeatList[0] = [52,16,4 ,6 ,30,43,42,39,27,20,5 ,40,33,19,11,23,46,35,14,9 ,13,24,32,22,31,15]; //靠左列
+originSeatList[1] = [1 ,29,34,25,28,3 ,8 ,51,45,44,7 ,38,37,2 ,10,21,48,50,47,41,49,26,36,17,12,18]; //靠右列
 
 
 let seatList = creat2DArray();

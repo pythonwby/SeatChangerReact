@@ -150,7 +150,7 @@ function App() {
 								<Stack spacing={0.7} sx={{height: '4.5vh'}} direction='row' alignContent={'center'} justifyContent={'center'} divider={<Divider orientation="vertical" variant='middle' flexItem />}>
 									<a rel="noreferrer" target='_blank' href='https://github.com/pythonwby/SeatChangerReact' className='info-span-style'><GithubLogoSVG/></a>
 									<a rel="noreferrer" target='_blank' href='https://www.cloudflare.com'><CloudflareLogoSVG/></a>
-									<span className='info-span-style'>S.C.R. V1.2.0 by pythonwby on 2024.9.1</span>
+									<span className='info-span-style'>S.C.R. V1.2.1 by pythonwby on 2024.9.6</span>
 									<span className='info-span-style'>Based on Cloudflare Pages</span>
 								</Stack>
 							</Grid>
