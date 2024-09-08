@@ -39,3 +39,12 @@ body{
     background-repeat: no-repeat;
     background-position-y: top;
 }
+.no-backgroundImage {
+    background-image: none;
+}
+.flipIcon-rotated {
+    transform: rotate(-90deg);
+}
+.flipIcon-unRotated {
+    transform: rotate(90deg);
+}

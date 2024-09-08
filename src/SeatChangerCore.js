@@ -25,7 +25,7 @@ function countFridays(date) {
     return thurdaysCount;
 }
 
-function creat2DArray(){
+function create2DArray(){
     let array = new Array(2);
     array[0] = new Array(26);
     array[1] = new Array(26);
@@ -79,6 +79,8 @@ export function lastWeekShift(){
     weekCnt--;
 }
 
+export let reverseSeatImage = () => {reverseFlag = !reverseFlag}
+
 export function shiftToNow(){
     resetSeatList();
     let weeks = countFridays(startTime);;
@@ -104,14 +106,25 @@ export function listToImage(){
     for (let i = 0; i < 7; i++)
         image[i] = new Array(11);
 
-    image[0] = [seatList[1][20], seatList[0][20], 0, seatList[1][13], seatList[0][13], 0, seatList[1][6] , seatList[0][6] , 0, seatList[1][0], seatList[0][0]];
-    image[1] = [seatList[1][21], seatList[0][21], 0, seatList[1][14], seatList[0][14], 0, seatList[1][7] , seatList[0][7] , 0, seatList[1][1], seatList[0][1]];
-    image[2] = [seatList[1][22], seatList[0][22], 0, seatList[1][15], seatList[0][15], 0, seatList[1][8] , seatList[0][8] , 0, seatList[1][2], seatList[0][2]];
-    image[3] = [seatList[1][23], seatList[0][23], 0, seatList[1][16], seatList[0][16], 0, seatList[1][9] , seatList[0][9] , 0, seatList[1][3], seatList[0][3]];
-    image[4] = [seatList[1][24], seatList[0][24], 0, seatList[1][17], seatList[0][17], 0, seatList[1][10], seatList[0][10], 0, seatList[1][4], seatList[0][4]];
-    image[5] = [seatList[1][25], seatList[0][25], 0, seatList[1][18], seatList[0][18], 0, seatList[1][11], seatList[0][11], 0, seatList[1][5], seatList[0][5]];
-    image[6] = [0              , 0              , 0, seatList[1][19], seatList[0][19], 0, seatList[1][12], seatList[0][12], 0, 0             , 0             ];
-    
+    if (!reverseFlag){
+        image[0] = [seatList[1][20], seatList[0][20], 0, seatList[1][13], seatList[0][13], 0, seatList[1][6] , seatList[0][6] , 0, seatList[1][0], seatList[0][0]];
+        image[1] = [seatList[1][21], seatList[0][21], 0, seatList[1][14], seatList[0][14], 0, seatList[1][7] , seatList[0][7] , 0, seatList[1][1], seatList[0][1]];
+        image[2] = [seatList[1][22], seatList[0][22], 0, seatList[1][15], seatList[0][15], 0, seatList[1][8] , seatList[0][8] , 0, seatList[1][2], seatList[0][2]];
+        image[3] = [seatList[1][23], seatList[0][23], 0, seatList[1][16], seatList[0][16], 0, seatList[1][9] , seatList[0][9] , 0, seatList[1][3], seatList[0][3]];
+        image[4] = [seatList[1][24], seatList[0][24], 0, seatList[1][17], seatList[0][17], 0, seatList[1][10], seatList[0][10], 0, seatList[1][4], seatList[0][4]];
+        image[5] = [seatList[1][25], seatList[0][25], 0, seatList[1][18], seatList[0][18], 0, seatList[1][11], seatList[0][11], 0, seatList[1][5], seatList[0][5]];
+        image[6] = [0              , 0              , 0, seatList[1][19], seatList[0][19], 0, seatList[1][12], seatList[0][12], 0, 0             , 0             ];
+    }
+    else{
+        image[0] = [0             , 0             , 0, seatList[0][12], seatList[1][12], 0, seatList[0][19], seatList[1][19], 0, 0              , 0              ];
+        image[1] = [seatList[0][5], seatList[1][5], 0, seatList[0][11], seatList[1][11], 0, seatList[0][18], seatList[1][18], 0, seatList[0][25], seatList[1][25]];
+        image[2] = [seatList[0][4], seatList[1][4], 0, seatList[0][10], seatList[1][10], 0, seatList[0][17], seatList[1][17], 0, seatList[0][24], seatList[1][24]];
+        image[3] = [seatList[0][3], seatList[1][3], 0, seatList[0][9] , seatList[1][9] , 0, seatList[0][16], seatList[1][16], 0, seatList[0][23], seatList[1][23]];
+        image[4] = [seatList[0][2], seatList[1][2], 0, seatList[0][8] , seatList[1][8] , 0, seatList[0][15], seatList[1][15], 0, seatList[0][22], seatList[1][22]];
+        image[5] = [seatList[0][1], seatList[1][1], 0, seatList[0][7] , seatList[1][7] , 0, seatList[0][14], seatList[1][14], 0, seatList[0][21], seatList[1][21]];
+        image[6] = [seatList[0][0], seatList[1][0], 0, seatList[0][6] , seatList[1][6] , 0, seatList[0][13], seatList[1][13], 0, seatList[0][20], seatList[1][20]];
+    }
+
     for (let i = 0; i < 7; i++)
         for (let j = 0; j < 11; j++)
             image[i][j] = numberToName[image[i][j]];
@@ -131,13 +144,15 @@ const numberToName = ["", "蔡宇轩", "陈锦轩", "陈怡杉", "代宇彤", "�
                       "魏熠宸","吴博远", "吴谦益", "夏康洋", "向宏博", "熊梓煊",
                       "徐艺轩", "杨惜婷", "姚熙子正", "易峻熙","詹晨旺","张峻豪",
                       "赵艺涵","周子君", "熊通", "左恩森", "杨诗涵"];
-const originSeatList = creat2DArray();
+const originSeatList = create2DArray();
+
+export let reverseFlag = false;
 
 originSeatList[0] = [52,16,4 ,6 ,30,43,42,39,27,20,5 ,40,33,19,11,23,46,35,14,9 ,13,24,32,22,31,15]; //靠左列
 originSeatList[1] = [1 ,29,34,25,28,3 ,8 ,51,45,44,7 ,38,37,2 ,10,21,48,50,47,41,49,26,36,17,12,18]; //靠右列
 
 
-let seatList = creat2DArray();
+let seatList = create2DArray();
 resetSeatList();
 let weekCnt = 0;
 shiftToNow();
