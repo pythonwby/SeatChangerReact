@@ -133,7 +133,7 @@ export function listToImage(){
 }
 
 const startTime = new Date("2024-08-31");
-const weekShift = 0;            // 用于对座位进行整体偏移
+const weekShift = -1;            // 用于对座位进行整体偏移
 const holidayMode = false;      // 假期模式，暂停座位更新，调整 weekShift 为当前周数即可使用，建议先将原周数注释
 const numberToName = ["", "蔡宇轩", "陈锦轩", "陈怡杉", "代宇彤", "丁艺贝", 
                       "丁屹城","丁梓馨", "冯浚", "高千惠","郭俊雄","韩呈奕", 
