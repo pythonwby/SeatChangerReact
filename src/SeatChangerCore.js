@@ -17,7 +17,7 @@ function countFridays(date) {
         throw new Error("开始时间晚于当前时间，无法进行计算。");
     }
     while (startDate <= currentDate){
-        if(startDate.getDay() === 5){
+        if(startDate.getDay() === 1){
             thurdaysCount++;
         }
         startDate.setDate(startDate.getDate() + 1)
