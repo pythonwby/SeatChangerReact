@@ -26,7 +26,7 @@ import './Styles.css';
 import {CloudflareLogoSVG, GithubLogoSVG} from './SVGIcons';
 
 const timeNow = new Date();
-const lightOrDark = 18;    //Light和Dark模式时间分界线
+const lightOrDark = 20;    //Light和Dark模式时间分界线
 const darkTheme = createTheme({palette:{mode: 'dark'}});
 const lightTheme = createTheme({palette:{mode: 'light'}});
 const tablecellStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 15, whiteSpace: 'nowrap', border: '1px dashed gray', padding: '12px 9px', bgcolor: 'rgba(0,0,0,0)'};
@@ -39,8 +39,8 @@ function App() {
 	const [colorMode, setColorMode] = useState(timeNow.getHours() < lightOrDark ? lightTheme : darkTheme);
 	const [colorModeIcon, setColorModeIcon] = useState(colorMode.palette.mode === 'dark' ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />);
 	const [backgroundCssClass,setBackgroundCssClass] = useState(timeNow.getHours() < lightOrDark ? 'backgroundImage-style-light' : 'backgroundImage-style-dark');
-	const [boxBackgroundSx, setBoxBackgroundColor] = useState(timeNow.getHours() < lightOrDark ? {bgcolor: 'rgba(210,225,230,0.7)', width: 700} : {bgcolor: 'rgba(70,75,80,0.6)', width: 700});
-	const [paperBackgroundSx, setPaperBackgroundColor] = useState(timeNow.getHours() < lightOrDark ? {width: 633, bgcolor: 'rgba(255,255,255,0.4)'} : {width: 633, bgcolor: 'rgba(30,30,30,0.6)'});
+	const [boxBackgroundSx, setBoxBackgroundColor] = useState(timeNow.getHours() < lightOrDark ? {bgcolor: 'rgba(210,225,230,0.55)', width: 700} : {bgcolor: 'rgba(70,75,80,0.6)', width: 700});
+	const [paperBackgroundSx, setPaperBackgroundColor] = useState(timeNow.getHours() < lightOrDark ? {width: 633, bgcolor: 'rgba(255,255,255,0.5)'} : {width: 633, bgcolor: 'rgba(30,30,30,0.6)'});
 	const [dividerTextSx, setDividerTextSx] = useState(timeNow.getHours() < lightOrDark ? {fontFamily: 'LXGW WenKai Lite', fontSize: 13, color: '#333333'} : {fontFamily: 'LXGW WenKai Lite', fontSize: 13, color: '#BBBBBB'});
 	const [flipButtonCssClass, setFlipButtonCssClass] = useState('flipIcon-rotated');
 
@@ -154,7 +154,7 @@ function App() {
 								<Stack spacing={0.7} sx={{height: '0.8'}} direction='row' alignContent={'center'} justifyContent={'center'} divider={<Divider orientation="vertical" variant='middle' flexItem />}>
 									<a rel="noreferrer" target='_blank' href='https://github.com/pythonwby/SeatChangerReact' className='info-span-style'><GithubLogoSVG/></a>
 									<a rel="noreferrer" target='_blank' href='https://www.cloudflare.com'><CloudflareLogoSVG/></a>
-									<span className='info-span-style'>S.C.R. V1.3.3 by pythonwby on 2024.9.23</span>
+									<span className='info-span-style'>S.C.R. V1.3.4 by pythonwby on 2024.10.2</span>
 									<span className='info-span-style'>Based on Cloudflare Pages</span>
 								</Stack>
 							</Grid>

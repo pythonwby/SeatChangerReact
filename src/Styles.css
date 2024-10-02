@@ -28,16 +28,16 @@ body{
     background-color: yellow;
 }
 .backgroundImage-style-light {
-    background-image: url('./BackgroundImageLight.webp');
+    background-image: url('./BackgroundImageLight.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: top;
+    background-position-y: center;
 }
 .backgroundImage-style-dark {
     background-image: url('./BackgroundImageDark.webp');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: top;
+    background-position-y: center;
 }
 .no-backgroundImage {
     background-image: none;
