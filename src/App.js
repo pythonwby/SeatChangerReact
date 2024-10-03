@@ -73,8 +73,8 @@ function App() {
 			setColorModeIcon(<DarkModeOutlinedIcon/>);
 			setColorMode(lightTheme);
 			setBackgroundCssClass('backgroundImage-style-light');
-			setBoxBackgroundColor({bgcolor: 'rgba(210,225,230,0.7)', width: 700});
-			setPaperBackgroundColor({width: 633, bgcolor: 'rgba(255,255,255,0.4)'});
+			setBoxBackgroundColor({bgcolor: 'rgba(210,225,230,0.55)', width: 700});
+			setPaperBackgroundColor({width: 633, bgcolor: 'rgba(255,255,255,0.5)'});
 			setDividerTextSx({fontFamily: 'LXGW WenKai Lite', fontSize: 13, color: '#333333'});
 		}else if (colorMode.palette.mode === 'light') { //Light to Dark
 			setColorModeIcon(<LightModeOutlinedIcon/>);
@@ -154,7 +154,7 @@ function App() {
 								<Stack spacing={0.7} sx={{height: '0.8'}} direction='row' alignContent={'center'} justifyContent={'center'} divider={<Divider orientation="vertical" variant='middle' flexItem />}>
 									<a rel="noreferrer" target='_blank' href='https://github.com/pythonwby/SeatChangerReact' className='info-span-style'><GithubLogoSVG/></a>
 									<a rel="noreferrer" target='_blank' href='https://www.cloudflare.com'><CloudflareLogoSVG/></a>
-									<span className='info-span-style'>S.C.R. V1.3.4 by pythonwby on 2024.10.2</span>
+									<span className='info-span-style'>S.C.R. V1.3.4 fix1 by pythonwby on 2024.10.3</span>
 									<span className='info-span-style'>Based on Cloudflare Pages</span>
 								</Stack>
 							</Grid>
