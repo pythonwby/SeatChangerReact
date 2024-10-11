@@ -132,8 +132,8 @@ export function listToImage(){
     return image;
 }
 
-const startTime = new Date("2024-08-31");
-const weekShift = -1;            // 用于对座位进行整体偏移
+const startTime = new Date("2024-10-10");
+const weekShift = 0;            // 用于对座位进行整体偏移
 const holidayMode = false;      // 假期模式，暂停座位更新，调整 weekShift 为当前周数即可使用，建议先将原周数注释
 const numberToName = ["", "蔡宇轩", "陈锦轩", "陈怡杉", "代宇彤", "丁艺贝", 
                       "丁屹城","丁梓馨", "冯浚", "高千惠","郭俊雄","韩呈奕", 
@@ -148,8 +148,8 @@ const originSeatList = create2DArray();
 
 export let reverseFlag = false;
 
-originSeatList[0] = [53,16,4 ,6 ,30,43,42,39,27,20,5 ,40,33,19,11,23,46,35,14,9 ,13,24,32,22,31,15]; //靠左列
-originSeatList[1] = [1 ,29,34,25,28,3 ,8 ,51,45,44,7 ,38,37,2 ,10,21,48,50,47,41,49,26,36,17,12,18]; //靠右列
+originSeatList[0] = [25,47,50,36,7 ,53,3 ,24,29,13,38,21,31,32,18,45,37,27,12,26,17,20,39,5 ,49,10]; //靠右列
+originSeatList[1] = [16,48,30,34,1 ,4 ,41,51,15,2 ,28,33,22,11,19,40,44,35,14,23,9 ,6 ,8 ,42,43,46]; //靠左列
 
 
 let seatList = create2DArray();

@@ -39,8 +39,8 @@ function App() {
 	const [colorMode, setColorMode] = useState(timeNow.getHours() < lightOrDark ? lightTheme : darkTheme);
 	const [colorModeIcon, setColorModeIcon] = useState(colorMode.palette.mode === 'dark' ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />);
 	const [backgroundCssClass,setBackgroundCssClass] = useState(timeNow.getHours() < lightOrDark ? 'backgroundImage-style-light' : 'backgroundImage-style-dark');
-	const [boxBackgroundSx, setBoxBackgroundColor] = useState(timeNow.getHours() < lightOrDark ? {bgcolor: 'rgba(210,225,230,0.55)', width: 700} : {bgcolor: 'rgba(70,75,80,0.6)', width: 700});
-	const [paperBackgroundSx, setPaperBackgroundColor] = useState(timeNow.getHours() < lightOrDark ? {width: 633, bgcolor: 'rgba(255,255,255,0.5)'} : {width: 633, bgcolor: 'rgba(30,30,30,0.6)'});
+	const [boxBackgroundSx, setBoxBackgroundColor] = useState(timeNow.getHours() < lightOrDark ? {bgcolor: 'rgba(210,225,230,0.65)', width: 700} : {bgcolor: 'rgba(70,75,80,0.6)', width: 700});
+	const [paperBackgroundSx, setPaperBackgroundColor] = useState(timeNow.getHours() < lightOrDark ? {width: 633, bgcolor: 'rgba(255,255,255,0.35)'} : {width: 633, bgcolor: 'rgba(30,30,30,0.6)'});
 	const [dividerTextSx, setDividerTextSx] = useState(timeNow.getHours() < lightOrDark ? {fontFamily: 'LXGW WenKai Lite', fontSize: 13, color: '#333333'} : {fontFamily: 'LXGW WenKai Lite', fontSize: 13, color: '#BBBBBB'});
 	const [flipButtonCssClass, setFlipButtonCssClass] = useState('flipIcon-rotated');
 
@@ -73,8 +73,8 @@ function App() {
 			setColorModeIcon(<DarkModeOutlinedIcon/>);
 			setColorMode(lightTheme);
 			setBackgroundCssClass('backgroundImage-style-light');
-			setBoxBackgroundColor({bgcolor: 'rgba(210,225,230,0.55)', width: 700});
-			setPaperBackgroundColor({width: 633, bgcolor: 'rgba(255,255,255,0.5)'});
+			setBoxBackgroundColor({bgcolor: 'rgba(210,225,230,0.65)', width: 700});
+			setPaperBackgroundColor({width: 633, bgcolor: 'rgba(255,255,255,0.35)'});
 			setDividerTextSx({fontFamily: 'LXGW WenKai Lite', fontSize: 13, color: '#333333'});
 		}else if (colorMode.palette.mode === 'light') { //Light to Dark
 			setColorModeIcon(<LightModeOutlinedIcon/>);
@@ -154,7 +154,7 @@ function App() {
 								<Stack spacing={0.7} sx={{height: '0.8'}} direction='row' alignContent={'center'} justifyContent={'center'} divider={<Divider orientation="vertical" variant='middle' flexItem />}>
 									<a rel="noreferrer" target='_blank' href='https://github.com/pythonwby/SeatChangerReact' className='info-span-style'><GithubLogoSVG/></a>
 									<a rel="noreferrer" target='_blank' href='https://www.cloudflare.com'><CloudflareLogoSVG/></a>
-									<span className='info-span-style'>S.C.R. V1.3.4 fix1 by pythonwby on 2024.10.3</span>
+									<span className='info-span-style'>S.C.R. V1.4.0 by pythonwby on 2024.10.11</span>
 									<span className='info-span-style'>Based on Cloudflare Pages</span>
 								</Stack>
 							</Grid>
