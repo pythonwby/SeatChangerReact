@@ -36,7 +36,7 @@ const paperBackgroundSxLightMode = {width: 633, bgcolor: 'rgba(255,255,255,0.35)
 const paperBackgroundSxDarkMode = {width: 633, bgcolor: 'rgba(30,30,30,0.6)'};
 
 const timeNow = new Date();
-const lightOrDark = 24;    //Light和Dark模式时间分界线
+const lightOrDark = 20;    //Light和Dark模式时间分界线
 const darkTheme = createTheme({palette:{mode: 'dark'}});
 const lightTheme = createTheme({palette:{mode: 'light'}});
 const tablecellStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 15, whiteSpace: 'nowrap', border: '1px dashed gray', padding: '12px 9px', bgcolor: 'rgba(0,0,0,0)'};
