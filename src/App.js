@@ -14,24 +14,35 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
+
 import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import FlipOutlinedIcon from '@mui/icons-material/FlipOutlined';
+import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
+import HideImageOutlinedIcon from '@mui/icons-material/HideImageOutlined';
+
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { IconButton } from '@mui/material';
+
 import { listToImage, getWeekString, nextWeekShift, lastWeekShift, shiftToNow, reverseSeatImage} from './SeatChangerCore';
 import './Styles.css';
 import {CloudflareLogoSVG, GithubLogoSVG} from './SVGIcons';
 
+const boxbackgroundSxLightMode = {bgcolor: 'rgba(210,225,230,0.65)', width: 700};
+const boxbackgroundSxDarkMode = {bgcolor: 'rgba(70,75,80,0.6)', width: 700};
+const paperBackgroundSxLightMode = {width: 633, bgcolor: 'rgba(255,255,255,0.35)'};
+const paperBackgroundSxDarkMode = {width: 633, bgcolor: 'rgba(30,30,30,0.6)'};
+
 const timeNow = new Date();
-const lightOrDark = 20;    //Light和Dark模式时间分界线
+const lightOrDark = 24;    //Light和Dark模式时间分界线
 const darkTheme = createTheme({palette:{mode: 'dark'}});
 const lightTheme = createTheme({palette:{mode: 'light'}});
 const tablecellStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 15, whiteSpace: 'nowrap', border: '1px dashed gray', padding: '12px 9px', bgcolor: 'rgba(0,0,0,0)'};
 const emptyTablecellStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 15, whiteSpace: 'nowrap', border: 0, width: 8};
 const buttonStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 16, fontWeight: 'bold', height: 33, border: 2};
+var ifHideImage = false;
 
 function App() {
 	const [seatImage, setSeatImage] = useState(listToImage());
@@ -39,10 +50,12 @@ function App() {
 	const [colorMode, setColorMode] = useState(timeNow.getHours() < lightOrDark ? lightTheme : darkTheme);
 	const [colorModeIcon, setColorModeIcon] = useState(colorMode.palette.mode === 'dark' ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />);
 	const [backgroundCssClass,setBackgroundCssClass] = useState(timeNow.getHours() < lightOrDark ? 'backgroundImage-style-light' : 'backgroundImage-style-dark');
-	const [boxBackgroundSx, setBoxBackgroundColor] = useState(timeNow.getHours() < lightOrDark ? {bgcolor: 'rgba(210,225,230,0.65)', width: 700} : {bgcolor: 'rgba(70,75,80,0.6)', width: 700});
-	const [paperBackgroundSx, setPaperBackgroundColor] = useState(timeNow.getHours() < lightOrDark ? {width: 633, bgcolor: 'rgba(255,255,255,0.35)'} : {width: 633, bgcolor: 'rgba(30,30,30,0.6)'});
+	const [boxBackgroundSx, setBoxBackgroundColor] = useState(timeNow.getHours() < lightOrDark ? boxbackgroundSxLightMode : boxbackgroundSxDarkMode);
+	const [paperBackgroundSx, setPaperBackgroundColor] = useState(timeNow.getHours() < lightOrDark ? paperBackgroundSxLightMode : paperBackgroundSxDarkMode);
 	const [dividerTextSx, setDividerTextSx] = useState(timeNow.getHours() < lightOrDark ? {fontFamily: 'LXGW WenKai Lite', fontSize: 13, color: '#333333'} : {fontFamily: 'LXGW WenKai Lite', fontSize: 13, color: '#BBBBBB'});
 	const [flipButtonCssClass, setFlipButtonCssClass] = useState('flipIcon-rotated');
+	const [imageHideButtonIcon, setImageHideButtonIcon] = useState(<HideImageOutlinedIcon/>);
+	const [paperElevation, setPaperElevation] = useState(5);
 
 	function onNextWeekButtonPress(){
 		nextWeekShift();
@@ -69,20 +82,45 @@ function App() {
 	}
 
 	function onColorModeChangeButtonPress(){
+		if (ifHideImage) return;
 		if (colorMode.palette.mode === 'dark') {        // Dark to Light
 			setColorModeIcon(<DarkModeOutlinedIcon/>);
 			setColorMode(lightTheme);
 			setBackgroundCssClass('backgroundImage-style-light');
-			setBoxBackgroundColor({bgcolor: 'rgba(210,225,230,0.65)', width: 700});
-			setPaperBackgroundColor({width: 633, bgcolor: 'rgba(255,255,255,0.35)'});
+			setBoxBackgroundColor(boxbackgroundSxLightMode);
+			setPaperBackgroundColor(paperBackgroundSxLightMode);
 			setDividerTextSx({fontFamily: 'LXGW WenKai Lite', fontSize: 13, color: '#333333'});
 		}else if (colorMode.palette.mode === 'light') { //Light to Dark
 			setColorModeIcon(<LightModeOutlinedIcon/>);
 			setColorMode(darkTheme);
 			setBackgroundCssClass('backgroundImage-style-dark');
-			setBoxBackgroundColor({bgcolor: 'rgba(70,75,80,0.6)', width: 700});
-			setPaperBackgroundColor({width: 633, bgcolor: 'rgba(30,30,30,0.6)'});
+			setBoxBackgroundColor(boxbackgroundSxDarkMode);
+			setPaperBackgroundColor(paperBackgroundSxDarkMode);
 			setDividerTextSx({fontFamily: 'LXGW WenKai Lite', fontSize: 13, color: '#BBBBBB'});
+		}
+	}
+
+	function onImageHideButtonPress(){
+		if (!ifHideImage) {                                //Show to Hide
+			if (colorMode.palette.mode === 'dark'){
+				onColorModeChangeButtonPress();
+			}
+			setBackgroundCssClass('no-backgroundImage');
+			setImageHideButtonIcon(<ImageOutlinedIcon/>);
+			setBoxBackgroundColor({bgcolor: 'rgba(0,0,0,0)', width: 700});
+			setPaperBackgroundColor({width: 633, bgcolor: 'rgba(0,0,0,0)'});
+			setPaperElevation(0);
+			ifHideImage = !ifHideImage;
+		}else {                                          
+			setColorModeIcon(<DarkModeOutlinedIcon/>);
+			setColorMode(lightTheme);
+			setBackgroundCssClass('backgroundImage-style-light');
+			setBoxBackgroundColor(boxbackgroundSxLightMode);
+			setPaperBackgroundColor(paperBackgroundSxLightMode);
+			setDividerTextSx({fontFamily: 'LXGW WenKai Lite', fontSize: 13, color: '#333333'});
+			setPaperElevation(5);
+			setImageHideButtonIcon(<HideImageOutlinedIcon/>);
+			ifHideImage = !ifHideImage;
 		}
 	}
 
@@ -97,7 +135,7 @@ function App() {
 								<span className='data-out-of-date-warning-style'>数据已过时，暂未更新</span>
 							</Grid> */}
 							<Grid item xs={12}>
-								<Paper sx={paperBackgroundSx} elevation={5}>
+								<Paper sx={paperBackgroundSx} elevation={paperElevation}>
 									<TableContainer>
 										<Table>
 											<TableBody>
@@ -139,7 +177,10 @@ function App() {
 							<Grid xs={2}>
 								<Button color='info' size='small' variant='outlined' sx={buttonStyle} onClick={onNextWeekButtonPress}>下一周</Button>
 							</Grid>
-							<Grid xs={1.5}/>
+							<Grid xs={0.5}/>
+							<Grid xs={1}>
+								<IconButton color='info' onClick={onImageHideButtonPress}>{imageHideButtonIcon}</IconButton>
+							</Grid>
 							<Grid xs={1}>
 								<IconButton color='info' onClick={onColorModeChangeButtonPress}>{colorModeIcon}</IconButton>
 							</Grid>
@@ -154,7 +195,7 @@ function App() {
 								<Stack spacing={0.7} sx={{height: '0.8'}} direction='row' alignContent={'center'} justifyContent={'center'} divider={<Divider orientation="vertical" variant='middle' flexItem />}>
 									<a rel="noreferrer" target='_blank' href='https://github.com/pythonwby/SeatChangerReact' className='info-span-style'><GithubLogoSVG/></a>
 									<a rel="noreferrer" target='_blank' href='https://www.cloudflare.com'><CloudflareLogoSVG/></a>
-									<span className='info-span-style'>S.C.R. V1.4.1 by pythonwby on 2024.10.19</span>
+									<span className='info-span-style'>S.C.R. V1.5.0 by pythonwby on 2024.10.25</span>
 									<span className='info-span-style'>Based on Cloudflare Pages</span>
 								</Stack>
 							</Grid>

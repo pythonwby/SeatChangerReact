@@ -41,6 +41,7 @@ body{
 }
 .no-backgroundImage {
     background-image: none;
+    background-color: white;
 }
 .flipIcon-rotated {
     transform: rotate(-90deg);
