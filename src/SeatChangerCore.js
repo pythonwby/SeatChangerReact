@@ -8,7 +8,7 @@ function abs(x){
     return -x;
 }
 
-function countFridays(date) {
+function countSaturdays(date) {
     if (holidayMode) return 0;
     let thurdaysCount = 0
     let startDate = new Date(date);
@@ -83,7 +83,7 @@ export let reverseSeatImage = () => {reverseFlag = !reverseFlag}
 
 export function shiftToNow(){
     resetSeatList();
-    let weeks = countFridays(startTime);;
+    let weeks = countSaturdays(startTime);;
     weeks += weekShift;
     if (weeks >= 0){
         for (let i = 0; i < weeks; i++){
@@ -125,6 +125,9 @@ export function listToImage(){
         image[6] = [seatList[0][0], seatList[1][0], 0, seatList[0][6] , seatList[1][6] , 0, seatList[0][13], seatList[1][13], 0, seatList[0][20], seatList[1][20]];
     }
 
+    if (developFlag)
+        return image;
+
     for (let i = 0; i < 7; i++)
         for (let j = 0; j < 11; j++)
             image[i][j] = numberToName[image[i][j]];
@@ -132,8 +135,10 @@ export function listToImage(){
     return image;
 }
 
-const startTime = new Date("2024-10-10");
-const weekShift = -1;            // 用于对座位进行整体偏移
+let developFlag = false;        // 值为true时，名字显示为学号
+
+const startTime = new Date("2024-12-03");
+const weekShift = 0;            // 用于对座位进行整体偏移
 const holidayMode = false;      // 假期模式，暂停座位更新，调整 weekShift 为当前周数即可使用，建议先将原周数注释
 const numberToName = ["", "蔡宇轩", "陈锦轩", "陈怡杉", "代宇彤", "丁艺贝", 
                       "丁屹城","丁梓馨", "冯浚", "高千惠","郭俊雄","韩呈奕", 
@@ -148,8 +153,8 @@ const originSeatList = create2DArray();
 
 export let reverseFlag = false;
 
-originSeatList[0] = [25,47,50,36,7 ,53,3 ,24,29,13,38,21,31,32,17,45,37,27,12,23,18,20,39,5 ,49,10]; //靠右列
-originSeatList[1] = [16,48,30,34,1 ,4 ,41,51,15,2 ,28,33,22,11,9 ,40,44,35,14,26,19,6 ,8 ,42,43,46]; //靠左列
+originSeatList[0] = [51,39,35,27,36,0 ,17,28,29,46,37,8 ,3 ,7 ,2 ,38,13,23,43,32,4 ,15,19,14,26,42]; //靠右列
+originSeatList[1] = [47,40,44,11,45,50,1 ,41,6 ,20,30,34,49,24,16,9 ,5 ,18,12,21,10,22,33,25,48,31]; //靠左列
 
 
 let seatList = create2DArray();
