@@ -39,8 +39,8 @@ const timeNow = new Date();
 const lightOrDark = 20;    //Light和Dark模式时间分界线
 const darkTheme = createTheme({palette:{mode: 'dark'}});
 const lightTheme = createTheme({palette:{mode: 'light'}});
-const tablecellStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 15, whiteSpace: 'nowrap', border: '1px dashed gray', padding: '12px 9px', bgcolor: 'rgba(0,0,0,0)'};
-const emptyTablecellStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 15, whiteSpace: 'nowrap', border: 0, width: 8};
+const tablecellStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 14, whiteSpace: 'nowrap', border: '1px dashed gray', padding: '10px 7px', bgcolor: 'rgba(0,0,0,0)'};
+const emptyTablecellStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 14, whiteSpace: 'nowrap', border: 0, width: 8};
 const buttonStyle = {fontFamily: 'LXGW WenKai Lite', fontSize: 16, fontWeight: 'bold', height: 33, border: 2};
 var ifHideImage = false;
 
@@ -131,9 +131,9 @@ function App() {
 				<Container align='center' maxWidth='md'>
 					<Box sx={boxBackgroundSx}>
 						<Grid container spacing={1} alignContent={'center'} justifyContent={'center'}>
-							{/* <Grid item xs={12}>
-								<span className='data-out-of-date-warning-style'>数据已过时，暂未更新</span>
-							</Grid> */}
+							<Grid item xs={12}>
+								<span className='data-out-of-date-warning-style'>由于基本失去作用，本程序暂时放弃维护</span>
+							</Grid>
 							<Grid item xs={12}>
 								<Paper sx={paperBackgroundSx} elevation={paperElevation}>
 									<TableContainer>
@@ -146,7 +146,7 @@ function App() {
 														<TableCell align='center' sx={emptyTablecellStyle}/>
 														<TableCell align='center' sx={tablecellStyle}>{s[3]}</TableCell>
 														<TableCell align='center' sx={tablecellStyle}>{s[4]}</TableCell>
-														<TableCell align='center' sx={emptyTablecellStyle}/>
+														<TableCell align='center' sx={emptyTablecellStyle}>{s[5]}</TableCell>
 														<TableCell align='center' sx={tablecellStyle}>{s[6]}</TableCell>
 														<TableCell align='center' sx={tablecellStyle}>{s[7]}</TableCell>
 														<TableCell align='center' sx={emptyTablecellStyle}/>
@@ -195,7 +195,7 @@ function App() {
 								<Stack spacing={0.7} sx={{height: '0.8'}} direction='row' alignContent={'center'} justifyContent={'center'} divider={<Divider orientation="vertical" variant='middle' flexItem />}>
 									<a rel="noreferrer" target='_blank' href='https://github.com/pythonwby/SeatChangerReact' className='info-span-style'><GithubLogoSVG/></a>
 									<a rel="noreferrer" target='_blank' href='https://www.cloudflare.com'><CloudflareLogoSVG/></a>
-									<span className='info-span-style'>S.C.R. V1.5.3 by pythonwby on 2024.12.3</span>
+									<span className='info-span-style'>S.C.R. V1.5.4 by pythonwby on 2024.12.29</span>
 									<span className='info-span-style'>Based on Cloudflare Pages</span>
 								</Stack>
 							</Grid>
